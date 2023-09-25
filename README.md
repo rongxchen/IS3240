@@ -18,3 +18,20 @@
 2. find the latest version
 <br>
 - click "pull" under Git (merge if necessary)
+
+<h2>3. project structure</h2>
+1. back-end and web scraping
+<br>
+- service: web scraping programs
+<br>
+- utils: utility functions like md5 encryption
+<br>
+- app.py (main run function)
+<br>
+- config.py (all static variables for configuration)
+<br>
+- models.py (ORM class like User), sqlite3.db (database)
+2. front-end
+- static (css, images, js)
+<br>
+- templates (all .html files)
