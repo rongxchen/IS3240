@@ -4,15 +4,349 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/services/stock_price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_variables.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/cipher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/jwt_util.py" afterDir="false" />
+    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="v1">
+      <change afterPath="$PROJECT_DIR$/static/css/element.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/403-forbidden-tiny-people-standing-near-prohibited-gesture-isolated-flat-illustration_74855-11132.avif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/500-Internal-Server-Error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/cute-penguin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/fintech-1_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/koala.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/oops-404-error-with-broken-robot-concept-illustration_114360-5529.avif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/config/encap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/alert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/aside.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/avatar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/backtop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/badge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/breadcrumb-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/breadcrumb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/button-group.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/carousel-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/cascader-panel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/cascader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/checkbox-button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/checkbox-group.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/checkbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/col.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/collapse-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/color-picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/container.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/date-picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/descriptions-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/descriptions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/directives/mousewheel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/directives/repeat-click.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/divider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/drawer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/dropdown-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/dropdown-menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/element-ui.common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/empty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/form-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/image.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/infinite-scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/input-number.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/link.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/format.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/af-ZA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/cs-CZ.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ee.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/eo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/hy-AM.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/kg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ku.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/kz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/mn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/nb-NO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ru-RU.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/sv-SE.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/tk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/tr-TR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/ug-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/uz-UZ.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/locale/lang/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/menu-item-group.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/menu-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/message-box.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/mixins/emitter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/mixins/focus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/mixins/locale.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/mixins/migrating.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/notification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/option-group.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/option.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/page-header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/pagination.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/popconfirm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/popover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/progress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/radio-button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/radio-group.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/radio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/rate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/result.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/row.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/scrollbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/skeleton-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/skeleton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/spinner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/step.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/steps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/submenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/switch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/tab-pane.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/table-column.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/alert.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/aside.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/avatar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/backtop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/badge.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/breadcrumb-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/breadcrumb.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/button-group.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/calendar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/carousel-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/cascader-panel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/cascader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/checkbox-button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/checkbox-group.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/checkbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/col.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/collapse-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/collapse.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/color-picker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/container.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/date-picker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/descriptions-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/descriptions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/dialog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/display.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/divider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/drawer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/dropdown-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/dropdown-menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/dropdown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/empty.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/form-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/icon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/infinite-scroll.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/infiniteScroll.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/input-number.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/input.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/link.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/loading.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/menu-item-group.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/menu-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/message-box.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/message.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/notification.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/option-group.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/option.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/page-header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/pagination.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/popconfirm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/popover.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/popper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/progress.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/radio-button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/radio-group.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/radio.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/rate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/result.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/row.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/scrollbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/select-dropdown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/skeleton-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/skeleton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/slider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/spinner.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/step.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/steps.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/submenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/switch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/tab-pane.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/table-column.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/table.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/tabs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/tag.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/time-picker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/time-select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/timeline-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/timeline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/tooltip.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/transfer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/tree.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/theme-chalk/upload.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/time-picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/time-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/timeline-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/timeline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/transitions/collapse-transition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/af-ZA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/cs-CZ.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ee.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/eo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/hy-AM.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/kg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ku.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/kz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/mn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/nb-NO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ru-RU.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/sv-SE.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/tk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/tr-TR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/ug-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/uz-UZ.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/umd/locale/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/after-leave.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/aria-dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/aria-utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/clickoutside.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/date-util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/date.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/dom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/menu/aria-menubar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/menu/aria-menuitem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/menu/aria-submenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/merge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/popup/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/popup/popup-manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/resize-event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/scroll-into-view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/scrollbar-width.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/shared.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/vdom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lib-master/utils/vue-popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/sqlite3.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlite3.db" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite3.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/financial_news.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/financial_news.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +359,17 @@
         <option value="Flask Main" />
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -43,14 +388,20 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/chenr/PycharmProjects/IS3240/group_project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/chenr/PycharmProjects/IS3240/group_project/static&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chenr\PycharmProjects\IS3240\group_project\static" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="group_project" />
@@ -66,6 +417,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="financial_news" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="group_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/services" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/services/financial_news.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,6 +524,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.financial_news" />
         <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="Python.user" />
         <item itemvalue="Python.static_variables" />
@@ -167,16 +541,31 @@
       <updated>1694410637323</updated>
       <workItem from="1694410638831" duration="30000" />
       <workItem from="1695614203839" duration="2188000" />
+      <workItem from="1695617047615" duration="1718000" />
+      <workItem from="1695620960005" duration="3165000" />
     </task>
+    <task id="LOCAL-00001" summary="v1">
+      <created>1695617336184</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695617336184</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/group_project$user.coverage" NAME="user Coverage Results" MODIFIED="1695615775925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
-    <SUITE FILE_PATH="coverage/group_project$app.coverage" NAME="app Coverage Results" MODIFIED="1695616159577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/group_project$app.coverage" NAME="app Coverage Results" MODIFIED="1695624057536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/group_project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1695616014368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/group_project$financial_news.coverage" NAME="financial_news Coverage Results" MODIFIED="1695621389802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/group_project$static_variables.coverage" NAME="static_variables Coverage Results" MODIFIED="1695615367527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

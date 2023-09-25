@@ -1,18 +1,12 @@
 import os
-# from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 from flask import Flask, render_template, request
 from models import user
 from utils import jwt_util
-from services import stock_price
+from services import stock_price, financial_news
 
-app = Flask(__name__)
-
+app = Flask(__name__, static_folder="static")
 db_name = os.getcwd() + "/sqlite3.db"
-# app.config["SQLALCHEMY_DATABASE_URL"] = "sqlite:////" + db_name
-# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-#
-# db = SQLAlchemy(app)
 
 def result(code: int, message: str, data: any = None):
     return {
@@ -33,10 +27,16 @@ def token_required(f):
         return f(username, *args, **kwargs)
     return decorator
 
+"""
+pages
+"""
 @app.route('/index', methods=["GET"])
 def to_index():
-    return render_template("/index")
+    return render_template("index.html")
 
+"""
+users
+"""
 @app.route("/api/users", methods=["POST"])
 def login():
     body = request.get_json()
@@ -75,12 +75,23 @@ def delete_account(username):
     user.delete_user(username)
     return result(200, "success")
 
+"""
+stocks
+"""
 @app.route("/api/stocks/price/<symbol>")
 def get_stock_price(symbol):
     price_list = stock_price.get_stock_price(symbol, 1)
     if not price_list:
         return result(400, "no such data")
     return result(200, "stock price fetched", price_list)
+
+"""
+news
+"""
+@app.route("/api/news/<int:page>/<int:size>", methods=["GET"])
+def get_news_list(page, size):
+    news_list = financial_news.from_reuters(page, size)
+    return result(200, "success", news_list)
 
 
 if __name__ == '__main__':
