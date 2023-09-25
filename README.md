@@ -22,7 +22,7 @@
 <h2>3. project structure</h2>
 1. back-end and web scraping
 <br>
-- service: web scraping programs
+- services: web scraping programs
 <br>
 - utils: utility functions like md5 encryption
 <br>
