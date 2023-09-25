@@ -1,7 +1,9 @@
 # IS3240
 <h2>1. set up</h2>
 1. clone or download from GitHub
+<br>
 2. under root of requirements.txt, open terminal and run command "pip install -r requirements.txt"
+<br>
 3. run app.py to see if the web application is available
 
 <h2>2. modify the project code (using pycharm)</h2>
