@@ -6,7 +6,6 @@
 
 <h2>2. modify the project code</h2>
 1. for convenience, just modify your own part and then commit and push to GitHub
-<br>
 - click "commit" in the top right corner
 ![img.png](img.png)
 - enter commit message (e.g., "v1"), and then click "commit and push"
