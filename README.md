@@ -15,3 +15,5 @@
 2. find the latest version
 - click "pull" under Git
 ![img_3.png](img_3.png)
+
+ok
