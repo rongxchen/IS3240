@@ -13,7 +13,5 @@
 - click "push"
 ![img_2.png](img_2.png)
 2. find the latest version
-- click "pull" under Git
+- click "pull" under Git (merge if necessary)
 ![img_3.png](img_3.png)
-
-ok
