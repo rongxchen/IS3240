@@ -31,6 +31,7 @@
 - config.py (all static variables for configuration)
 <br>
 - models.py (ORM class like User), sqlite3.db (database)
+<br>
 2. front-end
 - static (css, images, js)
 <br>
