@@ -11,3 +11,5 @@
 ![img.png](img.png)
 - enter commit message (e.g., "v1"), and then click "commit and push"
 ![img_1.png](img_1.png)
+- click "push"
+![img_2.png](img_2.png)
