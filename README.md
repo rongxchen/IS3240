@@ -33,6 +33,7 @@
 - models.py (ORM class like User), sqlite3.db (database)
 <br>
 2. front-end
+<br>
 - static (css, images, js)
 <br>
 - templates (all .html files)
