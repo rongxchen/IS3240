@@ -38,3 +38,5 @@ but for some services, models might not be involved, i.e., web scraping
 <br>
 8. sqlite3.db: database
 <br>
+
+<h2>use "pipreqs --force ." to generate new requirements.txt</h2>
