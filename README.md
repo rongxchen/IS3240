@@ -20,20 +20,21 @@
 - click "pull" under Git (merge if necessary)
 
 <h2>3. project structure</h2>
-1. back-end and web scraping
+1. controllers: APIs, backend
 <br>
-- services: web scraping programs
+2. models: connections to database
 <br>
-- utils: utility functions like md5 encryption
+3. services: bridge between controllers and models, i.e., mean logics will be written here
 <br>
-- app.py (main run function)
+but for some services, models might not be involved, i.e., web scraping
 <br>
-- config.py (all static variables for configuration)
+4. static: frontend tools including css, js, images
 <br>
-- models.py (ORM class like User), sqlite3.db (database)
+5. templates: .html files
 <br>
-2. front-end
+6. utils: general utilities
 <br>
-- static (css, images, js)
+7. app.py: mean run function
 <br>
-- templates (all .html files)
+8. sqlite3.db: database
+<br>
