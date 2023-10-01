@@ -1,9 +1,8 @@
 import requests
 import json
+from utils.http import get_headers
 
-headers = {
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
-}
+headers = get_headers()
 
 def enc_params(page, size):
     offset = (page-1) * size
