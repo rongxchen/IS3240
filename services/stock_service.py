@@ -26,7 +26,6 @@ class TigerTrade:
         stock_list = []
         try:
             data = resp.json()["data"]["stockList"]
-            print(data)
             for stock in data:
                 if (by_market and market != stock["market"]) or stock["type"] != 0:
                     continue
@@ -66,7 +65,6 @@ class TigerTrade:
         try:
             data = resp.json()
             details = data["detail"]
-            print(details)
             stock_price_info["detail"] = {
                 "last_price": details["adjPreClose"]
             }
