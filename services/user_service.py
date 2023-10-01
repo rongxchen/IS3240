@@ -3,7 +3,6 @@ from models.util import generate_id
 from utils.cipher import md5_encrypt
 
 def login(username, password):
-    users = session.query(User).all()
     user = session.query(User).filter_by(username=username).first()
     _password = md5_encrypt(password)
     if not user or user.password != _password:
