@@ -22,7 +22,6 @@ class TigerTrade:
               "deviceId=web-dd481837-24f3-4f54-8f2d-b2a9097&appVer=4.17.2&" \
               f"appName=laohu8&vendor=web&platform=web&edition=full&word={symbol}&market=US,HK"
         resp = requests.get(url=url, headers=headers)
-
         stock_list = []
         try:
             data = resp.json()["data"]["stockList"]
@@ -60,7 +59,6 @@ class TigerTrade:
               "deviceId=web-dd481837-24f3-4f54-8f2d-b2a9097&appVer=4.17.2&" \
               "appName=laohu8&vendor=web&platform=web&edition=full&delay=true&manualRefresh=true"
         resp = requests.get(url=url, headers=headers)
-
         stock_price_info = {}
         try:
             data = resp.json()
