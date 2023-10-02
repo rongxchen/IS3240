@@ -14,6 +14,8 @@ def get_token(user_id, duration_hour = 4):
 def verify_token(token):
     try:
         data = jwt.decode(token, SEC_KEY, algorithms="HS256")
-        return True, data["user_id"]
+        timestamp = int(datetime.now().timestamp() * 1000)
+        expired = timestamp > data["exp"]
+        return not expired, data["user_id"] if not expired else "token expired"
     except Exception as e:
         return False, str(e)
