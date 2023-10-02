@@ -1,23 +1,9 @@
-from functools import wraps
 from flask import Blueprint, request
-from general_config import result
-from utils import jwt_util
+from general_config import result, token_required
 from utils.jwt_util import get_token
 from services import user_service
 
 user_api = Blueprint("user_api", __name__)
-
-def token_required(f):
-    @wraps(f)
-    def decorator(*args, **kwargs):
-        token = request.headers["Authorization"]
-        if not token:
-            return result(403, "unauthorized")
-        verified, resp = jwt_util.verify_token(token)
-        if not verified:
-            return result(403, f"unauthorized: {resp}")
-        return f(resp, *args, **kwargs)
-    return decorator
 
 @user_api.post("/api/users")
 def login():
