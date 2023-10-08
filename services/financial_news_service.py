@@ -5,6 +5,11 @@ from utils.http import get_headers
 headers = get_headers()
 
 def enc_params(page, size):
+    """ helper function to construct get params for routers news scraping
+    :param page: current page
+    :param size: size of news per page
+    :return: a json-like string to be concatenated with the url
+    """
     offset = (page-1) * size
     params = {
         "arc-site":"reuters","called_from_a_component":True,"fetch_type":"collection","id":"/business/finance/",
@@ -14,11 +19,16 @@ def enc_params(page, size):
     return json.dumps(params)
 
 def from_reuters(page, size):
+    """
+    :param page: current page
+    :param size: size of news per page
+    :return: a list of news articles
+    """
     params = enc_params(page, size)
     url = f"https://www.reuters.com/pf/api/v3/content/fetch/articles-by-section-alias-or-id-v1?query={params}"
     resp = requests.get(url=url, headers=headers)
     reuters_domain = "https://www.reuters.com"
-    article_list = []
+    news_list = []
     try:
         articles = resp.json()["result"]["articles"]
         for article in articles:
@@ -29,9 +39,9 @@ def from_reuters(page, size):
             publish_time = article.get("published_time", "").split("T")[0]
             img_url = article.get("thumbnail", {}).get("url", "")
             category = article.get("kicker", {}).get("name", "")
-            article_list.append({
+            news_list.append({
                 "title": title, "url": url, "publish_time": publish_time, "img_url": img_url, "category": category
             })
     except Exception as e:
         print(e)
-    return article_list
+    return news_list
