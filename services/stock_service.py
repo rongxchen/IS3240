@@ -68,9 +68,6 @@ class TigerTrade:
 
     @staticmethod
     def get_stock_price_info(symbol, market, k_type):
-        symbol = str(symbol).upper()
-        market = str(market).upper()
-        k_type = str(k_type).upper()
         timestamp = int(datetime.now().timestamp() * 1000)
         k_line = TigerTrade.__map_k_type(k_type)
         url = f"https://hq.laohu8.com/{'' if market == 'US' else 'hk_stock/'}stock_info/candle_stick/{k_line}/{symbol}?" \
