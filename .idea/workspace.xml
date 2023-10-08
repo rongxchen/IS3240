@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="v1">
-      <change afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="backend stock price init">
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/stock_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/stock_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/general_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/general_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/stock_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/stock_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlite3.db" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite3.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/config/encap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/user_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Flask Main" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -224,7 +218,8 @@
       <workItem from="1696062835126" duration="12689000" />
       <workItem from="1696251590585" duration="707000" />
       <workItem from="1696568510009" duration="642000" />
-      <workItem from="1696666741621" duration="7090000" />
+      <workItem from="1696666741621" duration="7216000" />
+      <workItem from="1696739511322" duration="1953000" />
     </task>
     <task id="LOCAL-00001" summary="v1">
       <created>1695617336184</created>
@@ -366,7 +361,70 @@
       <option name="project" value="LOCAL" />
       <updated>1696252286469</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="frontend init">
+      <created>1696673941778</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1696673941778</updated>
+    </task>
+    <task id="LOCAL-00022" summary="backend stock price init">
+      <created>1696673967149</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1696673967149</updated>
+    </task>
+    <task id="LOCAL-00023" summary="backend stock price init">
+      <created>1696740188357</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1696740188357</updated>
+    </task>
+    <task id="LOCAL-00024" summary="backend stock price init">
+      <created>1696740299778</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1696740299778</updated>
+    </task>
+    <task id="LOCAL-00025" summary="backend users init">
+      <created>1696740449441</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1696740449441</updated>
+    </task>
+    <task id="LOCAL-00026" summary="backend news init">
+      <created>1696740621802</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1696740621803</updated>
+    </task>
+    <task id="LOCAL-00027" summary="backend news init">
+      <created>1696741142052</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1696741142052</updated>
+    </task>
+    <task id="LOCAL-00028" summary="backend app init">
+      <created>1696741156132</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1696741156132</updated>
+    </task>
+    <task id="LOCAL-00029" summary="backend stock price init">
+      <created>1696741343523</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1696741343523</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,14 +443,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1" />
+    <MESSAGE value="frontend init" />
+    <MESSAGE value="backend users init" />
+    <MESSAGE value="backend news init" />
+    <MESSAGE value="backend app init" />
+    <MESSAGE value="backend stock price init" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend stock price init" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/group_project$user.coverage" NAME="user Coverage Results" MODIFIED="1695647953991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/group_project$user_service.coverage" NAME="user_service Coverage Results" MODIFIED="1696064146386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/group_project$stock_service.coverage" NAME="stock_service Coverage Results" MODIFIED="1696668579820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/group_project$test.coverage" NAME="test Coverage Results" MODIFIED="1696670445225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/group_project$app.coverage" NAME="app Coverage Results" MODIFIED="1696673876491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/group_project$app.coverage" NAME="app Coverage Results" MODIFIED="1696741023908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/group_project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1696064416719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/group_project$financial_news.coverage" NAME="financial_news Coverage Results" MODIFIED="1695621389802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/group_project$model.coverage" NAME="model Coverage Results" MODIFIED="1696068887865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
