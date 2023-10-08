@@ -6,6 +6,9 @@ from utils.http import get_headers
 headers = get_headers()
 
 def obtain_TigerTrade_access_token():
+    """ get a new access token from Tiger Trade if the token is expired
+    :return: a new token / none
+    """
     url = "https://www.laohu8.com/quotes"
     resp = requests.get(url=url, headers=get_headers())
     find_access_token = re.compile(r'"access_token":"(.*?)"')
@@ -33,6 +36,12 @@ class TigerTrade:
 
     @staticmethod
     def search_stock(symbol, by_market = False, market = "ALL"):
+        """ search for stocks by symbol and/or market
+        :param symbol: stock symbol
+        :param by_market: whether by market or not
+        :param market: US / HK / ALL
+        :return: a list of stocks
+        """
         timestamp = int(datetime.now().timestamp() * 1000)
         url = "https://frontend-community.laohu8.com/search/v5/general?" \
               f"_s={timestamp}&lang=zh_CN&lang_content=cn&region=HKG&" \
@@ -69,6 +78,12 @@ class TigerTrade:
 
     @staticmethod
     def get_stock_price_info(symbol, market, k_type):
+        """ get stock price info including last price and historical price list
+        :param symbol: stock symbol
+        :param market: stock market
+        :param k_type: k line type: D / W / M
+        :return: stock detail (e.g., last price) + historical price list
+        """
         timestamp = int(datetime.now().timestamp() * 1000)
         k_line = TigerTrade.__map_k_type(k_type)
         url = f"https://hq.laohu8.com/{'' if market == 'US' else 'hk_stock/'}stock_info/candle_stick/{k_line}/{symbol}?" \
