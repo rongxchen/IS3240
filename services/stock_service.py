@@ -45,6 +45,7 @@ class TigerTrade:
             if len(data) == 0 and TigerTrade.retry == 0:
                 TigerTrade.reconfig_token()
                 TigerTrade.retry += 1
+                TigerTrade.search_stock(symbol, by_market, market)
             for stock in data:
                 if (by_market and market != stock["market"]) or stock["type"] != 0:
                     continue
@@ -71,8 +72,7 @@ class TigerTrade:
         timestamp = int(datetime.now().timestamp() * 1000)
         k_line = TigerTrade.__map_k_type(k_type)
         url = f"https://hq.laohu8.com/{'' if market == 'US' else 'hk_stock/'}stock_info/candle_stick/{k_line}/{symbol}?" \
-              f"_s={timestamp}&lang=zh_CN&lang_content=cn&region=HKG&" \
-              "deviceId=web-dd481837-24f3-4f54-8f2d-b2a9097&appVer=4.17.2&" \
+              f"_s={timestamp}&lang=zh_CN&lang_content=cn&region=HKG&deviceId=web-dd481837-24f3-4f54-8f2d-b2a9097&appVer=4.17.2&" \
               "appName=laohu8&vendor=web&platform=web&edition=full&delay=true&manualRefresh=true"
         resp = requests.get(url=url, headers=headers)
         stock_price_info = {}
@@ -81,6 +81,7 @@ class TigerTrade:
             if "error" in data and data["error"] == "invalid_token" and TigerTrade.retry == 0:
                 TigerTrade.reconfig_token()
                 TigerTrade.retry += 1
+                TigerTrade.get_stock_price_info(symbol, market, k_type)
             details = data["detail"]
             stock_price_info["detail"] = {
                 "last_price": details["adjPreClose"]
