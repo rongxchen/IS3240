@@ -12,5 +12,9 @@ app.register_blueprint(news_api)
 def to_index():
     return render_template("index.html")
 
+@app.get("/error/401")
+def to_401():
+    return render_template("error/401.html")
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8000, debug=True)
