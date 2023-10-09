@@ -1,5 +1,5 @@
 from flask import Blueprint
-from services.financial_news_service import from_reuters
+from services.news_service import from_reuters
 from general_config import token_required, result
 
 news_api = Blueprint("news_api", __name__)
