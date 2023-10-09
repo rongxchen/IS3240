@@ -2,6 +2,7 @@ import requests
 import re
 from datetime import datetime
 from utils.http import get_headers
+from general_config import tiger_token_path
 
 headers = get_headers()
 
@@ -13,7 +14,12 @@ def obtain_TigerTrade_access_token():
     resp = requests.get(url=url, headers=get_headers())
     find_access_token = re.compile(r'"access_token":"(.*?)"')
     access_token = re.findall(find_access_token, resp.text)
-    return access_token[0] if len(access_token) > 0 else None
+    print(access_token)
+    if len(access_token) > 0:
+        with open(tiger_token_path, "w") as file:
+            file.write(access_token[0])
+        return True
+    return False
 
 class TigerTrade:
     __k_type = {
@@ -22,15 +28,18 @@ class TigerTrade:
         "M": "month",
     }
 
-    authorization_token = "Bearer eyJhbGciOiJFUzI1NiIsImtpZCI6IjVVQzB5NGhnUXUiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjE2OTkyNTE3OTMsImlzcyI6IkNITiIsIm5vbmNlIjoiak5tRVJ2NXV4dUUyQlFTYWtrMlBBcm1xTkpJamIxc0pjNzNZWlpibnpwekFpbTQ2QXoifQ.Ya1xu02PatCS2gj3ntccMLz7HBDIvr8DvSkjqceHA5Bbuj-cMQjAQWApzxS6Jt4iceK695NEy9E0ct75aHsR-A"
-    headers["Authorization"] = authorization_token
+    with open(tiger_token_path, "r") as file:
+        access_token = "Bearer" + file.read()
+    headers["Authorization"] = access_token
 
     retry = 0
 
     @staticmethod
     def reconfig_token():
-        token = obtain_TigerTrade_access_token()
-        if token:
+        has_token = obtain_TigerTrade_access_token()
+        if has_token:
+            with open(tiger_token_path, "r") as file:
+                token = file.read()
             TigerTrade.authorization_token = "Bearer " + token
             headers["Authorization"] = TigerTrade.authorization_token
 
@@ -55,6 +64,7 @@ class TigerTrade:
                 TigerTrade.reconfig_token()
                 TigerTrade.retry += 1
                 TigerTrade.search_stock(symbol, by_market, market)
+                return
             for stock in data:
                 if (by_market and market != stock["market"]) or stock["type"] != 0:
                     continue
@@ -93,10 +103,12 @@ class TigerTrade:
         stock_price_info = {}
         try:
             data = resp.json()
+            print(data)
             if "error" in data and data["error"] == "invalid_token" and TigerTrade.retry == 0:
                 TigerTrade.reconfig_token()
                 TigerTrade.retry += 1
                 TigerTrade.get_stock_price_info(symbol, market, k_type)
+                return
             details = data["detail"]
             stock_price_info["detail"] = {
                 "last_price": details["adjPreClose"]

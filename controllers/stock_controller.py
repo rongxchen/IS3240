@@ -35,6 +35,13 @@ def get_stock_price(user_id, symbol, market, k_type):
     stock_price_info = stock_service.TigerTrade.get_stock_price_info(symbol, market, k_type)
     return result(200, "success", stock_price_info)
 
+def remove_all_matched(dir_path, prefix):
+    files = os.listdir(dir_path)
+    for file in files:
+        print(file)
+        if file.startswith(prefix):
+            os.remove(os.path.join(dir_path, file))
+
 @stock_api.post("/api/stocks/price/download")
 @token_required
 def download_price_data(user_id):
@@ -48,14 +55,16 @@ def download_price_data(user_id):
     k_type = str(body["k_type"]).upper()
     date = "".join(datetime.now().strftime("%Y-%m-%d").split("-"))
     # join the path
-    path = os.path.join(resource_path, "excel", "stock_price")
-    file_name = f"{symbol}-{market}-{k_type}-{date}.xlsx"
+    dir_path = os.path.join(resource_path, "excel", "stock_price")
+    prefix = f"{symbol}-{market}-{k_type}"
+    file_name = f"{prefix}-{date}.xlsx"
     # check if the path directory exists
-    if not os.path.exists(path):
-        os.makedirs(path)
-    path = os.path.join(path, file_name)
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
+    path = os.path.join(dir_path, file_name)
     # if the price.xlsx does not exist, create a new one
     if not os.path.exists(path):
+        remove_all_matched(dir_path, prefix)
         price_data = stock_service.TigerTrade.get_stock_price_info(symbol, market, k_type)["price_list"]
         df = pd.DataFrame(price_data)
         df.to_excel(path, index=False)

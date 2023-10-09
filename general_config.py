@@ -4,6 +4,7 @@ from flask import request, render_template
 from utils import jwt_util
 
 db_path = "sqlite:///" + os.path.join(os.path.dirname(__file__), "sqlite3.db")
+tiger_token_path = os.path.join(os.path.dirname(__file__), "TigerTrade_access_token.txt")
 resource_path = os.path.join(os.path.dirname(__file__), "resources")
 
 def result(code: int, message: str, data: any = None):
