@@ -38,7 +38,6 @@ def get_stock_price(user_id, symbol, market, k_type):
 def remove_all_matched(dir_path, prefix):
     files = os.listdir(dir_path)
     for file in files:
-        print(file)
         if file.startswith(prefix):
             os.remove(os.path.join(dir_path, file))
 

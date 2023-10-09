@@ -103,7 +103,6 @@ class TigerTrade:
         stock_price_info = {}
         try:
             data = resp.json()
-            print(data)
             if "error" in data and data["error"] == "invalid_token" and TigerTrade.retry == 0:
                 TigerTrade.reconfig_token()
                 TigerTrade.retry += 1
