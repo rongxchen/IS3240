@@ -21,7 +21,7 @@ but for some services, models might not be involved, i.e., web scraping
 <br>
 6. utils: general utilities
 <br>
-7. app.py: mean run function
+7. app.py: main run function
 <br>
 8. sqlite3.db: database
 <br>
