@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="exception handling init">
-      <change afterPath="$PROJECT_DIR$/TigerTrade_access_token.txt" afterDir="false" />
+    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="stock price download fix">
+      <change afterPath="$PROJECT_DIR$/caches/cache.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/stock_service_helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/stock_service_tiger_trade.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TigerTrade_access_token.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TigerTrade_access_token.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/stock_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/stock_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/general_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/general_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/excel/stock_price/BABA-US-D-20231007.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/excel/stock_price/TSLA-US-D-20231007.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/excel/stock_price/TSLA-US-D-20231009.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/services/stock_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/stock_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +25,8 @@
       <list>
         <option value="Flask Main" />
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -101,28 +103,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="group_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/model.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="stock_controller" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="group_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,6 +139,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/services/stock_service.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="stock_service_helper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="group_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/services" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/services/stock_service_helper.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -207,10 +209,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.stock_service" />
+        <item itemvalue="Python.stock_service_helper" />
         <item itemvalue="Python.stock_controller" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.stock_service" />
-        <item itemvalue="Python.model" />
       </list>
     </recent_temporary>
   </component>
@@ -234,7 +236,9 @@
       <workItem from="1696666741621" duration="7216000" />
       <workItem from="1696739511322" duration="2109000" />
       <workItem from="1696821536555" duration="1174000" />
-      <workItem from="1696848814427" duration="1687000" />
+      <workItem from="1696848814427" duration="4019000" />
+      <workItem from="1697023082422" duration="5555000" />
+      <workItem from="1697028980179" duration="828000" />
     </task>
     <task id="LOCAL-00001" summary="v1">
       <created>1695617336184</created>
@@ -474,7 +478,28 @@
       <option name="project" value="LOCAL" />
       <updated>1696822691423</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="stock price download fix">
+      <created>1696850530526</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1696850530526</updated>
+    </task>
+    <task id="LOCAL-00036" summary="stock price download fix">
+      <created>1696850550055</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1696850550055</updated>
+    </task>
+    <task id="LOCAL-00037" summary="stock price download fix">
+      <created>1696850606726</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1696850606726</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,18 +527,20 @@
     <MESSAGE value="init" />
     <MESSAGE value="backend new init" />
     <MESSAGE value="exception handling init" />
-    <option name="LAST_COMMIT_MESSAGE" value="exception handling init" />
+    <MESSAGE value="stock price download fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="stock price download fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/group_project$stock_controller.coverage" NAME="stock_controller Coverage Results" MODIFIED="1696849552060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controllers" />
     <SUITE FILE_PATH="coverage/group_project$user.coverage" NAME="user Coverage Results" MODIFIED="1695647953991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/group_project$user_service.coverage" NAME="user_service Coverage Results" MODIFIED="1696064146386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
-    <SUITE FILE_PATH="coverage/group_project$stock_service.coverage" NAME="stock_service Coverage Results" MODIFIED="1696668579820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/group_project$test.coverage" NAME="test Coverage Results" MODIFIED="1696670445225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/group_project$app.coverage" NAME="app Coverage Results" MODIFIED="1696850445290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/group_project$stock_service.coverage" NAME="stock_service Coverage Results" MODIFIED="1697027346606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
+    <SUITE FILE_PATH="coverage/group_project$app.coverage" NAME="app Coverage Results" MODIFIED="1697029741693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/group_project$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1696064416719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/group_project$financial_news.coverage" NAME="financial_news Coverage Results" MODIFIED="1695621389802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/group_project$model.coverage" NAME="model Coverage Results" MODIFIED="1696068887865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/group_project$stock_service_helper.coverage" NAME="stock_service_helper Coverage Results" MODIFIED="1697025923878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/group_project$static_variables.coverage" NAME="static_variables Coverage Results" MODIFIED="1695615367527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

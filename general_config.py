@@ -26,3 +26,9 @@ def token_required(f):
             # return result(403, f"unauthorized: {resp}")
         return f(resp, *args, **kwargs)
     return decorator
+
+def remove_all_matched(dir_path, prefix):
+    files = os.listdir(dir_path)
+    for file in files:
+        if file.startswith(prefix):
+            os.remove(os.path.join(dir_path, file))
