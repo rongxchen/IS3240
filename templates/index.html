@@ -36,18 +36,22 @@
                     "k_type": "D"
                 }, {responseType: 'arraybuffer'})
                 .then(response => {
-                  const contentDisposition = response.headers['content-disposition'];
-                  const fileNameMatch = contentDisposition.match(/filename="(.+)"/);
-                  const fileName = fileNameMatch ? fileNameMatch[1] : 'downloadedFile';
+                  if (response.data.code === 200) {
+                      const contentDisposition = response.headers['content-disposition'];
+                      const fileNameMatch = contentDisposition.match(/filename="(.+)"/);
+                      const fileName = fileNameMatch ? fileNameMatch[1] : 'downloadedFile';
 
-                  const blob = new Blob([response.data]);
-                  const url = URL.createObjectURL(blob);
+                      const blob = new Blob([response.data]);
+                      const url = URL.createObjectURL(blob);
 
-                  const link = document.createElement('a');
-                  link.href = url;
-                  link.download = fileName;
+                      const link = document.createElement('a');
+                      link.href = url;
+                      link.download = fileName;
 
-                  link.click();
+                      link.click();
+                  } else {
+                      this.$message.danger(response.data.message);
+                  }
                 })
                 .catch(error => {
                   console.error('Error downloading file:', error);
