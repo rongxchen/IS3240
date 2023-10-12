@@ -27,3 +27,13 @@ but for some services, models might not be involved, i.e., web scraping
 <br>
 
 <h2>use "pipreqs --force ." to generate new requirements.txt</h2>
+
+
+data collection
+1. stock price
+- source: we scrap stock price data from a online dealer called Tiger Trade, we request the api they use with authorization token obtained from their web page.
+- data cleaning: we only get required fileds such as date, open, high, low, close and volume.
+
+2. news data
+- source: we scrap news data from Routers by requesting their api.
+- data cleaning: we get fields like title, url, image and date.
