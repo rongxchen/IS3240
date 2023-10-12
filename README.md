@@ -36,4 +36,4 @@ Data Collection
 
 2. news data
 - source: we scrap news data from Routers by requesting their api.
-- data cleaning: we get fields like title, url, image and date.
+- data cleaning: we get fields like title, url, image, category and date.
