@@ -30,6 +30,7 @@ but for some services, models might not be involved, i.e., web scraping
 
 
 <h2>data collection</h2>
+<br>
 1. stock price
 - source: we scrap stock price data from a online dealer called Tiger Trade, we request the api they use with authorization token obtained from their web page.
 - data cleaning: we only get required fileds such as date, open, high, low, close and volume.
