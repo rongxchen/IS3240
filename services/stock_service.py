@@ -7,6 +7,9 @@ def search(symbol, market = "ALL"):
     return search_stock(symbol, market != "ALL", market)
 
 def get_stock_price(symbol, market, k_type):
+    symbol = str(symbol).upper()
+    market = str(market).upper()
+    k_type = str(k_type).upper()
     result = find_from_resource(symbol, market, k_type)
     if result:
         print("found in resource")
@@ -17,6 +20,9 @@ def get_stock_price(symbol, market, k_type):
     return get_stock_price_list(symbol, market, k_type)
 
 def get_csv_binary(symbol, market, k_type):
+    symbol = str(symbol).upper()
+    market = str(market).upper()
+    k_type = str(k_type).upper()
     try:
         path = find_from_resource(symbol, market, k_type, for_download=True)
         if path:

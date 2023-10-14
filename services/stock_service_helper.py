@@ -1,16 +1,9 @@
 import os
 import pandas as pd
 from datetime import datetime
-from caches.cache import asset_return_cache
 from general_config import resource_path, remove_all_matched
 
 required_headers = ["date", "open", "high", "low", "close", "volume"]
-
-def store_returns_to_cache(df: pd.DataFrame, symbol, market, k_type):
-    key = f"{symbol}-{market}"
-    if not symbol in asset_return_cache:
-        asset_return_cache[key] = {}
-    asset_return_cache[key][k_type] = df["cumulative return"].values
 
 def find_returns(df: pd.DataFrame, symbol, market, k_type):
     columns = df.columns
@@ -18,7 +11,6 @@ def find_returns(df: pd.DataFrame, symbol, market, k_type):
         return
     df["daily return"] = df["close"].pct_change()
     df["cumulative return"] = (1 + df["daily return"]).cumprod() - 1
-    store_returns_to_cache(df, symbol, market, k_type)
 
 def find_from_resource(symbol, market, k_type, for_download=False):
     date = datetime.now().date().strftime("%Y%m%d")
@@ -28,9 +20,7 @@ def find_from_resource(symbol, market, k_type, for_download=False):
     filepath = os.path.join(dir_path, filename)
     if os.path.exists(filepath):
         df = pd.read_csv(filepath)
-        store_returns_to_cache(df, symbol, market, k_type)
         return filepath if for_download else df_to_json(df)
-    remove_all_matched(dir_path, prefix)
     return None
 
 def convert_to_base_type(value):
