@@ -20,9 +20,7 @@ def obtain_TigerTrade_access_token():
         return True
     return False
 
-k_map = {
-    "D": "day", "W": "week", "M": "month"
-}
+k_map = {"D": "day", "W": "week", "M": "month"}
 def map_kline(k_type):
     return k_map[k_type] if k_type in k_map else k_map["D"]
 
