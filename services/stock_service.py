@@ -12,7 +12,6 @@ def get_stock_price(symbol, market, k_type):
     k_type = str(k_type).upper()
     result = find_from_resource(symbol, market, k_type)
     if result:
-        print("found in resource")
         return result
     symbol = str(symbol).upper()
     market = str(market).upper()

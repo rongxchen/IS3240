@@ -25,12 +25,12 @@ class User(Base):
         self.password = password
 
 
-class News(Base):
-    __tablename__ = "news"
+# class News(Base):
+#     __tablename__ = "news"
 
 
-class Favourite(Base):
-    __tablename__ = "favourites"
+# class Favourite(Base):
+#     __tablename__ = "favourites"
 
 
 # if __name__ == '__main__':
