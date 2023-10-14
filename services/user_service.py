@@ -12,9 +12,9 @@ def login(username, password):
     _password = md5_encrypt(password)
     if not user or user.password != _password:
         return False, "wrong username or password", None
-    return True, "authorized", user.user_id
+    return True, "authorized", user
 
-def register(username, password):
+def register(username, email, password):
     """ register with username and password
     :param username: /
     :param password: /
@@ -23,8 +23,11 @@ def register(username, password):
     find = session.query(User).filter_by(username=username).first()
     if find:
         return False, "username already registered"
+    find = session.query(User).filter_by(email=email).first()
+    if find:
+        return False, "email already registered"
     user_id = generate_id("user")
-    user = User(username, user_id, md5_encrypt(password))
+    user = User(username, email, user_id, md5_encrypt(password))
     session.add(user)
     session.commit()
     return True, "registered"
