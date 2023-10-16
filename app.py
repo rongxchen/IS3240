@@ -3,6 +3,7 @@ from controllers.user_controller import user_api
 from controllers.stock_controller import stock_api
 from controllers.news_controller import news_api
 from controllers.favourite_controller import favourite_api
+from services.news_service import sync_news
 
 app = Flask(__name__, static_folder="static")
 app.register_blueprint(user_api)
@@ -19,4 +20,5 @@ def to_401():
     return render_template("error/401.html")
 
 if __name__ == '__main__':
+    sync_news()
     app.run(host="0.0.0.0", port=8000, debug=True)

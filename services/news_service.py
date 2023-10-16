@@ -1,47 +1,38 @@
-import requests
-import json
-from utils.http import get_headers
+from datetime import datetime
+from models.model import News, session
+from sqlalchemy import desc
+from services.news_service_helper import from_reuters
 
-headers = get_headers()
+def find_latest(source):
+    return session.query(News).filter_by(source=source).order_by(desc("timestamp")).first()
 
-def enc_params(page, size):
-    """ helper function to construct get params for routers news scraping
-    :param page: current page
-    :param size: size of news per page
-    :return: a json-like string to be concatenated with the url
-    """
-    offset = (page-1) * size
-    params = {
-        "arc-site":"reuters","called_from_a_component":True,"fetch_type":"collection","id":"/business/finance/",
-        "offset":offset,"section_id":"/business/finance/","size":size,"sophi_page":"*","sophi_widget":"topic",
-        "uri":"/business/finance/","website":"reuters"
-    }
-    return json.dumps(params)
+def write_to_db(news_list, source, latest=None):
+    for news in news_list:
+        if latest and news["title"] == latest.title and news["publish_time"] == latest.publish_time:
+            session.commit()
+            return False
+        timestamp = int(datetime.strptime(news.get("publish_time"), "%Y-%m-%d").timestamp())
+        news_obj = News(news["title"], news["publish_time"], timestamp, source, news.get("url", ""),
+                        news.get("category", ""), news.get("img_url"))
+        session.add(news_obj)
+    session.commit()
+    return True
 
-def from_reuters(page, size):
-    """
-    :param page: current page
-    :param size: size of news per page
-    :return: a list of news articles
-    """
-    params = enc_params(page, size)
-    url = f"https://www.reuters.com/pf/api/v3/content/fetch/articles-by-section-alias-or-id-v1?query={params}"
-    resp = requests.get(url=url, headers=headers)
-    reuters_domain = "https://www.reuters.com"
-    news_list = []
-    try:
-        articles = resp.json()["result"]["articles"]
-        for article in articles:
-            if "title" not in article or "canonical_url" not in article:
-                continue
-            title = article.get("title", "")
-            url = reuters_domain + article.get("canonical_url", "")
-            publish_time = article.get("published_time", "").split("T")[0]
-            img_url = article.get("thumbnail", {}).get("url", "")
-            category = article.get("kicker", {}).get("name", "")
-            news_list.append({
-                "title": title, "url": url, "publish_time": publish_time, "img_url": img_url, "category": category
-            })
-    except Exception as e:
-        print(e)
-    return news_list
+def sync_news():
+    latest = find_latest("routers")
+    for i in range(1, 16):
+        news_from_routers = from_reuters(i, 20)
+        written = write_to_db(news_from_routers, "routers", latest)
+        print(written)
+        if not written:
+            break
+        print(f"page {i} finished")
+    print("synced to latest")
+
+def get_news_by_page(page, size):
+    _from = (page-1) * size
+    news_list = session.query(News).order_by(desc("timestamp")).limit(size).offset(_from).all()
+    return [{
+        "title": news.title, "url": news.url, "publish_time": news.publish_time, "img_url": news.img_url,
+        "category": news.category, "source": str(news.source).upper()
+    } for news in news_list]

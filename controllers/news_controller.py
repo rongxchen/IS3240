@@ -1,5 +1,5 @@
 from flask import Blueprint
-from services.news_service import from_reuters
+from services import news_service
 from general_config import token_required, result
 
 news_api = Blueprint("news_api", __name__)
@@ -12,7 +12,7 @@ def get_news_by_page(user_id, page, size):
     :param size: size of news per page
     :return: a list of news articles
     """
-    news_list = from_reuters(page, size)
+    news_list = news_service.get_news_by_page(page, size)
     if news_list:
         return result(200, "success", news_list)
     return result(400, "failed")
