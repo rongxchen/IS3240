@@ -1,42 +1,48 @@
 import os
-import numpy as np
 import pandas as pd
+from models.model import Favourite, session
+from sqlalchemy import desc, text
 from datetime import datetime
+from services.stock_service import get_stock_price
 from general_config import resource_path
-from services.stock_service_tiger_trade import get_stock_price_list
-from caches.cache import asset_return_cache
 
-def read_from_cache(symbol, market, days):
-    key = f"{symbol}-{market}"
-    if not key in asset_return_cache:
-        return None
-    close = asset_return_cache.get(key, np.array([]))
-    if days < len(close):
-        return calculate_cumulative_return(close[-days:])
-    return calculate_cumulative_return(close)
+def find_cur_price(symbol, market):
+    get_stock_price(symbol, market, "D")
+    today = datetime.now().date().strftime("%Y%m%d")
+    filename = f"{symbol}-{market}-D-{today}.csv"
+    filepath = os.path.join(resource_path, "csv", "stock_price", filename)
+    df = pd.read_csv(filepath)
+    df.index = df["date"]
+    return df["date"][-1], df.loc[df["date"][-1]]["close"]
 
-def store_to_cache(symbol, market, data):
-    key = f"{symbol}-{market}"
-    asset_return_cache[key] = data
+def find_if_exists(user_id, symbol, market):
+    return session.query(Favourite).filter_by(user_id=user_id, symbol=symbol, market=market).first()
 
-def calculate_cumulative_return(close: np.array):
-    daily_returns = np.diff(close) / close[:-1]
-    return (np.cumprod(1 + daily_returns) - 1)[-1]
+def add_or_remove_favourite(user_id, data):
+    data["symbol"] = str(data["symbol"]).upper()
+    data["market"] = str(data["market"]).upper()
+    favourite = find_if_exists(user_id, data["symbol"], data["market"])
+    if favourite:
+        session.delete(favourite)
+        session.commit()
+        return
+    date, cur_price = find_cur_price(data["symbol"], data["market"])
+    favourite = Favourite(user_id, data["symbol"], data["market"], date, cur_price, cur_price)
+    session.add(favourite)
+    session.commit()
 
-def read_cumulative_returns(symbol, market, start_date):
-    start = datetime.strptime(start_date, "%Y-%m-%d")
-    days = (datetime.now().date() - start.date()).days
-    find_return = read_from_cache(symbol, market, days)
-    if find_return:
-        return find_return
-    date = datetime.now().date().strftime("%Y%m%d")
-    filename = f"{symbol}-{market}-D-{date}.csv"
-    path = os.path.join(resource_path, "csv", "stock_price", filename)
-    if not os.path.exists(path):
-        get_stock_price_list(symbol, market, "D")
-    df = pd.read_csv(path)
-    closing = np.array(df["close"].to_list())
-    close = closing[-days:]
-    store_to_cache(symbol, market, closing)
-    return calculate_cumulative_return(close)
+def update_current_price(user_id):
+    favourites = session.query(Favourite).filter_by(user_id=user_id).order_by(desc("timestamp")).all()
+    for favourite in favourites:
+        _, cur_price = find_cur_price(favourite.symbol, favourite.market)
+        params = {"user_id": user_id, "cur_price": cur_price, "symbol": favourite.symbol, "market": favourite.market}
+        session.execute(text("update favourites set current_price = :cur_price "
+                        "where user_id = :user_id and symbol = :symbol and market = :market"), params)
+        session.commit()
 
+def get_favourites(user_id):
+    update_current_price(user_id)
+    favourites = session.query(Favourite).filter_by(user_id=user_id).order_by(desc("timestamp")).all()
+    return [{
+        "symbol": favourite.symbol, "market": favourite.market, "added_date": favourite.added_date, "cost": favourite.cost
+    } for favourite in favourites]

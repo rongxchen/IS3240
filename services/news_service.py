@@ -15,7 +15,7 @@ def write_to_db(news_list, source, latest=None):
         news_obj = News(news["title"], news["publish_time"], timestamp, source, news.get("url", ""),
                         news.get("category", ""), news.get("img_url"))
         session.add(news_obj)
-    session.commit()
+        session.commit()
     return True
 
 def sync_news():
