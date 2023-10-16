@@ -27,7 +27,8 @@ def add_or_remove_favourite(user_id, data):
         session.commit()
         return
     date, cur_price = find_cur_price(data["symbol"], data["market"])
-    favourite = Favourite(user_id, data["symbol"], data["market"], date, cur_price, cur_price)
+    timestamp = int(datetime.strptime(date, '%Y-%m-%d').timestamp())
+    favourite = Favourite(user_id, data["symbol"], data["market"], date, timestamp, cur_price, cur_price)
     session.add(favourite)
     session.commit()
 
