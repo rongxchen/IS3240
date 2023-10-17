@@ -14,11 +14,11 @@ def login():
     username = body["username"]
     password = body["password"]
     is_login, msg, data = user_service.login(username, password)
-    user_info = {"username": data.username, "email": data.email}
+    user_info = {"username": data.username, "email": data.email} if is_login else {}
     if not is_login:
         return result(401, msg)
     token = get_token(data.user_id)
-    return result(200, msg, token)
+    return result(200, msg, {"token": token, "user": user_info})
 
 @user_api.post("/api/users/register")
 def register():

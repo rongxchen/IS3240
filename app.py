@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask_cors import CORS
 from controllers.user_controller import user_api
 from controllers.stock_controller import stock_api
 from controllers.news_controller import news_api
@@ -10,6 +11,8 @@ app.register_blueprint(user_api)
 app.register_blueprint(stock_api)
 app.register_blueprint(news_api)
 app.register_blueprint(favourite_api)
+
+CORS(app)
 
 @app.get('/index')
 def to_index():
