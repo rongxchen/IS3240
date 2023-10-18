@@ -24,7 +24,7 @@ def token_required(f):
         verified, resp = jwt_util.verify_token(token)
         if not verified:
             return result(403, f"unauthorized: {resp}")
-        return f('resp', *args, **kwargs)
+        return f(resp, *args, **kwargs)
     return decorator
 
 def remove_under(dir_path):

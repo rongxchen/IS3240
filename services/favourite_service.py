@@ -1,19 +1,11 @@
-import os
-import pandas as pd
 from models.model import Favourite, session
 from sqlalchemy import desc, text
 from datetime import datetime
 from services.stock_service import get_stock_price
-from general_config import resource_path
 
 def find_cur_price(symbol, market):
-    get_stock_price(symbol, market, "D")
-    today = datetime.now().date().strftime("%Y%m%d")
-    filename = f"{symbol}-{market}-D-{today}.csv"
-    filepath = os.path.join(resource_path, "csv", "stock_price", filename)
-    df = pd.read_csv(filepath)
-    df.index = df["date"]
-    return df["date"][-1], df.loc[df["date"][-1]]["close"]
+    stock_price = get_stock_price(symbol, market, "D")
+    return stock_price[-1]["date"], stock_price[-1]["close"]
 
 def find_if_exists(user_id, symbol, market):
     return session.query(Favourite).filter_by(user_id=user_id, symbol=symbol, market=market).first()
@@ -44,6 +36,9 @@ def update_current_price(user_id):
 def get_favourites(user_id):
     update_current_price(user_id)
     favourites = session.query(Favourite).filter_by(user_id=user_id).order_by(desc("timestamp")).all()
+    print(user_id)
+    print(favourites)
     return [{
-        "symbol": favourite.symbol, "market": favourite.market, "added_date": favourite.added_date, "cost": favourite.cost
+        "symbol": favourite.symbol, "market": favourite.market, "added_date": favourite.added_date,
+        "cost": favourite.cost, "current_price": favourite.current_price
     } for favourite in favourites]
