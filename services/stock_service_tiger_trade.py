@@ -4,7 +4,7 @@ import os
 import pandas as pd
 from datetime import datetime
 from utils.http import get_headers
-from general_config import tiger_token_path, resource_path, remove_all_matched
+from general_config import tiger_token_path, resource_path
 from services.stock_service_helper import required_headers, find_returns
 
 def obtain_TigerTrade_access_token():
@@ -114,7 +114,6 @@ def get_stock_price_list(symbol, market, k_type):
         dir_path = os.path.join(resource_path, "csv", "stock_price")
         prefix = f"{symbol}-{market}-{k_type}"
         filepath = os.path.join(dir_path, f"{prefix}-{date}.csv")
-        remove_all_matched(dir_path, prefix)
         df.to_csv(filepath, index=False)
     except Exception as e:
         print(f"exception: {e}")

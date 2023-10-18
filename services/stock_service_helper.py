@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from datetime import datetime
-from general_config import resource_path, remove_all_matched
+from general_config import resource_path
 
 required_headers = ["date", "open", "high", "low", "close", "volume"]
 

@@ -2,6 +2,7 @@ import os
 from functools import wraps
 from flask import request, render_template
 from utils import jwt_util
+from datetime import datetime
 
 db_path = "sqlite:///" + os.path.join(os.path.dirname(__file__), "sqlite3.db")
 tiger_token_path = os.path.join(os.path.dirname(__file__), "TigerTrade_access_token.txt")
@@ -26,8 +27,9 @@ def token_required(f):
         return f('resp', *args, **kwargs)
     return decorator
 
-def remove_all_matched(dir_path, prefix):
+def remove_under(dir_path):
+    today = datetime.now().strftime("%Y%m%d")
     files = os.listdir(dir_path)
     for file in files:
-        if file.startswith(prefix):
+        if not file.split(".")[0].endswith(today):
             os.remove(os.path.join(dir_path, file))
