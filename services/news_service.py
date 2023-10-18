@@ -8,8 +8,9 @@ def find_latest(source):
 
 def write_to_db(news_list, source, latest=None):
     for news in news_list:
-        if latest and news["title"] == latest.title and news["publish_time"] == latest.publish_time:
-            session.commit()
+        timestamp = int(datetime.strptime(news["publish_time"], "%Y-%m-%d").timestamp())
+        if news["title"] == latest.title and timestamp == latest.timestamp:
+            print("stop syncing")
             return False
         timestamp = int(datetime.strptime(news.get("publish_time"), "%Y-%m-%d").timestamp())
         news_obj = News(news["title"], news["publish_time"], timestamp, source, news.get("url", ""),
@@ -20,10 +21,10 @@ def write_to_db(news_list, source, latest=None):
 
 def sync_news():
     latest = find_latest("routers")
+    print(latest)
     for i in range(1, 16):
         news_from_routers = from_reuters(i, 20)
         written = write_to_db(news_from_routers, "routers", latest)
-        print(written)
         if not written:
             break
         print(f"page {i} finished")
