@@ -14,13 +14,6 @@ app.register_blueprint(favourite_api)
 
 CORS(app)
 
-@app.get('/index')
-def to_index():
-    return render_template("index.html")
-
-@app.get("/error/401")
-def to_401():
-    return render_template("error/401.html")
 
 if __name__ == '__main__':
     sync_news()

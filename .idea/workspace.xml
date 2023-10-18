@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="stock price csv">
-      <change beforePath="$PROJECT_DIR$/services/favourite_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/favourite_service.py" afterDir="false" />
+    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="update favourite service">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlite3.db" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite3.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +236,7 @@
       <workItem from="1697117891117" duration="760000" />
       <workItem from="1697174956636" duration="799000" />
       <workItem from="1697284820782" duration="5078000" />
-      <workItem from="1697426318078" duration="8719000" />
+      <workItem from="1697426318078" duration="14238000" />
     </task>
     <task id="LOCAL-00001" summary="v1">
       <created>1695617336184</created>
@@ -565,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697435206531</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="update favourite service">
+      <created>1697435362265</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1697435362265</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,13 +612,14 @@
     <MESSAGE value="news sync &amp; insertion in db" />
     <MESSAGE value="user favourites add &amp; remove &amp; query" />
     <MESSAGE value="stock price csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="stock price csv" />
+    <MESSAGE value="update favourite service" />
+    <option name="LAST_COMMIT_MESSAGE" value="update favourite service" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/group_project$stock_controller.coverage" NAME="stock_controller Coverage Results" MODIFIED="1696849552060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controllers" />
     <SUITE FILE_PATH="coverage/group_project$user_service.coverage" NAME="user_service Coverage Results" MODIFIED="1696064146386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/group_project$stock_service.coverage" NAME="stock_service Coverage Results" MODIFIED="1697027346606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
-    <SUITE FILE_PATH="coverage/group_project$app.coverage" NAME="app Coverage Results" MODIFIED="1697435089243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/group_project$app.coverage" NAME="app Coverage Results" MODIFIED="1697447978120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/group_project$stock_service_helper.coverage" NAME="stock_service_helper Coverage Results" MODIFIED="1697025923878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/services" />
     <SUITE FILE_PATH="coverage/group_project$model.coverage" NAME="model Coverage Results" MODIFIED="1697427937025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/group_project$static_variables.coverage" NAME="static_variables Coverage Results" MODIFIED="1695615367527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
