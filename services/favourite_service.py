@@ -10,17 +10,15 @@ def find_cur_price(symbol, market):
 def find_if_exists(user_id, symbol, market):
     return session.query(Favourite).filter_by(user_id=user_id, symbol=symbol, market=market).first()
 
-def add_or_remove_favourite(user_id, data):
-    data["symbol"] = str(data["symbol"]).upper()
-    data["market"] = str(data["market"]).upper()
-    favourite = find_if_exists(user_id, data["symbol"], data["market"])
+def add_or_remove_favourite(user_id, symbol, market):
+    favourite = find_if_exists(user_id, symbol, market)
     if favourite:
         session.delete(favourite)
         session.commit()
         return
-    date, cur_price = find_cur_price(data["symbol"], data["market"])
+    date, cur_price = find_cur_price(symbol, market)
     timestamp = int(datetime.strptime(date, '%Y-%m-%d').timestamp())
-    favourite = Favourite(user_id, data["symbol"], data["market"], date, timestamp, cur_price, cur_price)
+    favourite = Favourite(user_id, symbol, market, date, timestamp, cur_price, cur_price)
     session.add(favourite)
     session.commit()
 
@@ -40,3 +38,10 @@ def get_favourites(user_id):
         "symbol": favourite.symbol, "market": favourite.market, "added_date": favourite.added_date,
         "cost": favourite.cost, "current_price": favourite.current_price
     } for favourite in favourites]
+
+def get_favourite_by_symbol(user_id, symbol):
+    favourite = session.query(Favourite).filter_by(user_id=user_id, symbol=symbol).first()
+    return {
+        "symbol": favourite.symbol, "market": favourite.market, "added_date": favourite.added_date,
+        "cost": favourite.cost, "current_price": favourite.current_price
+    } if favourite else None

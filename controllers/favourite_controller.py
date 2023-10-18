@@ -18,7 +18,9 @@ def add_favourite(user_id):
     :param data: {symbol: xxx, market: xxx}
     :return:
     """
-    data = dict(request.json)
-    favourite_service.add_or_remove_favourite(user_id, data)
-    favourites = favourite_service.get_favourites(user_id)
-    return result(200, "success", favourites)
+    data = request.json
+    symbol = str(data["symbol"]).upper()
+    market = str(data["market"]).upper()
+    favourite_service.add_or_remove_favourite(user_id, symbol, market)
+    favourite = favourite_service.get_favourite_by_symbol(user_id, symbol)
+    return result(200, "success", favourite)
