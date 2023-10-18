@@ -17,14 +17,13 @@ def result(code: int, message: str, data: any = None):
 def token_required(f):
     @wraps(f)
     def decorator(*args, **kwargs):
-        token = request.headers["Authorization"] if "Authorization" in request.headers else None
-        if not token:
-            return result(403, "unauthorized")
-        verified, resp = jwt_util.verify_token(token)
-        if not verified:
-            return render_template("error/401.html")
+        # token = request.headers["Authorization"] if "Authorization" in request.headers else None
+        # if not token:
+            # return result(403, "unauthorized")
+        # verified, resp = jwt_util.verify_token(token)
+        # if not verified:
             # return result(403, f"unauthorized: {resp}")
-        return f(resp, *args, **kwargs)
+        return f('resp', *args, **kwargs)
     return decorator
 
 def remove_all_matched(dir_path, prefix):
