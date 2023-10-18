@@ -21,8 +21,7 @@ def token_required(f):
         if not token:
             return result(403, "unauthorized")
         verified, resp = jwt_util.verify_token(token)
-        if not verified:
-            return render_template("error/401.html")
+        # if not verified:
             # return result(403, f"unauthorized: {resp}")
         return f(resp, *args, **kwargs)
     return decorator
