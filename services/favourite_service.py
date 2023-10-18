@@ -36,8 +36,6 @@ def update_current_price(user_id):
 def get_favourites(user_id):
     update_current_price(user_id)
     favourites = session.query(Favourite).filter_by(user_id=user_id).order_by(desc("timestamp")).all()
-    print(user_id)
-    print(favourites)
     return [{
         "symbol": favourite.symbol, "market": favourite.market, "added_date": favourite.added_date,
         "cost": favourite.cost, "current_price": favourite.current_price
