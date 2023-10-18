@@ -115,7 +115,7 @@ def get_stock_price_list(symbol, market, k_type):
         prefix = f"{symbol}-{market}-{k_type}"
         filepath = os.path.join(dir_path, f"{prefix}-{date}.csv")
         remove_all_matched(dir_path, prefix)
-        df.to_csv(filepath)
+        df.to_csv(filepath, index=False)
     except Exception as e:
         print(f"exception: {e}")
     return price_list
