@@ -11,7 +11,7 @@
 <br>
 2. models: connection models of database
 <br>
-3. services: bridge between controllers and models, i.e., mean logics will be written here
+3. services: bridge between controllers and models, i.e., main logics will be written here
 <br>
 but for some services, models might not be involved, i.e., web scraping
 <br>
