@@ -19,8 +19,10 @@ def find_from_resource(symbol, market, k_type, for_download=False):
     dir_path = os.path.join(resource_path, "csv", "stock_price")
     filepath = os.path.join(dir_path, filename)
     if os.path.exists(filepath):
+        if for_download:
+            return filepath
         df = pd.read_csv(filepath)
-        return filepath if for_download else df_to_json(df)
+        return df_to_json(df)
     return None
 
 def convert_to_base_type(value):
