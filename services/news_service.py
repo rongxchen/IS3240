@@ -9,7 +9,7 @@ def find_latest(source):
 def write_to_db(news_list, source, latest=None):
     for news in news_list:
         timestamp = int(datetime.strptime(news["publish_time"], "%Y-%m-%d").timestamp())
-        if news["title"] == latest.title and timestamp == latest.timestamp:
+        if timestamp < latest.timestamp or (news["title"] == latest.title and timestamp == latest.timestamp):
             print("stop syncing")
             return False
         timestamp = int(datetime.strptime(news.get("publish_time"), "%Y-%m-%d").timestamp())
