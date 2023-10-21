@@ -57,8 +57,9 @@ class Favourite(Base):
     timestamp = Column(Integer, nullable=False)
     cost = Column(Double, nullable=False)
     current_price = Column(Double)
+    quantity = Column(Integer, nullable=False)
 
-    def __init__(self, user_id, symbol, market, added_date, timestamp, cost, current_price=0.0):
+    def __init__(self, user_id, symbol, market, added_date, timestamp, cost, current_price=0.0, quantity=1):
         self.user_id = user_id
         self.symbol = symbol
         self.market = market
@@ -66,6 +67,7 @@ class Favourite(Base):
         self.timestamp = timestamp
         self.cost = cost
         self.current_price = current_price
+        self.quantity = quantity
 
 # if __name__ == '__main__':
 #     Base.metadata.create_all(engine)

@@ -24,3 +24,15 @@ def add_favourite(user_id):
     favourite_service.add_or_remove_favourite(user_id, symbol, market)
     favourite = favourite_service.get_favourite_by_symbol(user_id, symbol)
     return result(200, "success", favourite)
+
+@favourite_api.put("/api/favourites")
+@token_required
+def update_favourite(user_id):
+    data = request.json
+    symbol = str(data["symbol"]).upper()
+    market = str(data["market"]).upper()
+    quantity = int(data["quantity"])
+    updated = favourite_service.update_quantity(user_id, symbol, market, quantity)
+    if updated:
+        return result(200, "updated successfully", updated)
+    return result(400, "updated failed")

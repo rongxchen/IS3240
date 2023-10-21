@@ -23,6 +23,15 @@ def add_or_remove_favourite(user_id, symbol, market):
     session.add(favourite)
     session.commit()
 
+def update_quantity(user_id, symbol, market, quantity):
+    favourite = find_if_exists(user_id, symbol, market)
+    if not favourite:
+        return None
+    favourite.quantity = quantity
+    session.add(favourite)
+    session.commit()
+    return get_favourite_by_symbol(user_id, symbol)
+
 def update_current_price(user_id):
     favourites = session.query(Favourite).filter_by(user_id=user_id).order_by(desc("timestamp")).all()
     for favourite in favourites:
@@ -38,8 +47,8 @@ def get_favourites(user_id):
     return [{
         "symbol": favourite.symbol, "market": favourite.market, "added_date": favourite.added_date,
         "cost": favourite.cost, "current_price": favourite.current_price, "timestamp": favourite.timestamp,
-        "return": round(favourite.current_price - favourite.cost, 4),
-        "return_rate": round((favourite.current_price / favourite.cost - 1) * 100, 4)
+        "return": round((favourite.current_price - favourite.cost) * favourite.quantity, 3), "quantity": favourite.quantity,
+        "return_rate": round((favourite.current_price / favourite.cost - 1) * 100, 3)
     } for favourite in favourites]
 
 def get_favourite_by_symbol(user_id, symbol):
@@ -47,6 +56,6 @@ def get_favourite_by_symbol(user_id, symbol):
     return {
         "symbol": favourite.symbol, "market": favourite.market, "added_date": favourite.added_date,
         "cost": favourite.cost, "current_price": favourite.current_price, "timestamp": favourite.timestamp,
-        "return": round(favourite.current_price - favourite.cost, 4),
-        "return_rate": round((favourite.current_price/favourite.cost-1) * 100, 4)
+        "return": round((favourite.current_price - favourite.cost) * favourite.quantity, 3), "quantity": favourite.quantity,
+        "return_rate": round((favourite.current_price/favourite.cost-1) * 100, 3)
     } if favourite else None
