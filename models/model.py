@@ -46,6 +46,7 @@ class News(Base):
         self.category = category
         self.img_url = img_url
 
+@to_string
 class Favourite(Base):
     __tablename__ = "favourites"
 
@@ -69,5 +70,18 @@ class Favourite(Base):
         self.current_price = current_price
         self.quantity = quantity
 
-# if __name__ == '__main__':
-#     Base.metadata.create_all(engine)
+@to_string
+class Comparison(Base):
+    __tablename__ = 'comparisons'
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(String(100), nullable=False)
+    symbol = Column(String(100), nullable=False)
+    name = Column(String(100), nullable=False)
+    market = Column(String(100), nullable=False)
+
+    def __init__(self, user_id, symbol, name, market):
+        self.user_id = user_id
+        self.symbol = symbol
+        self.name = name
+        self.market = market

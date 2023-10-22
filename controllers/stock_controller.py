@@ -48,3 +48,35 @@ def download_price_data(user_id):
         response.headers['Content-Disposition'] = f'attachment; filename="{filename}"'
         return response
     return result(400, "error")
+
+@stock_api.get("/api/stocks/return/index/<string:interval>")
+@token_required
+def get_default_indexes_returns(user_id, interval):
+    interval = str(interval).upper()
+    data = stock_service.get_index_return(interval) + stock_service.get_user_comparisons(user_id, interval)
+    if not data:
+        return result(400, "failed")
+    return result(200, "success", data)
+
+@stock_api.post("/api/stocks/return")
+@token_required
+def get_single_return(user_id):
+    body = request.json
+    symbol = str(body["symbol"]).upper()
+    interval = str(body["interval"]).upper()
+    stocks = stock_service.search(symbol, "ALL")
+    for stock in stocks["list"]:
+        if stock["symbol"] == symbol:
+            data = stock_service.get_single_return(user_id, stock["symbol"], stock["name"], stock["market"], interval)
+            return result(200, "success", data)
+    return result(400, "no such stock")
+
+@stock_api.delete("/api/stocks/return")
+@token_required
+def remove_comparison(user_id):
+    body = request.json
+    symbol = str(body["symbol"]).upper()
+    removed = stock_service.remove_comparison(user_id, symbol)
+    if removed:
+        return result(200, "success")
+    return result(400, "failed")

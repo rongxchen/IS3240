@@ -109,7 +109,7 @@ def get_stock_price_list(symbol, market, k_type):
             })
         # save it as csv
         df = pd.DataFrame(price_list, columns=required_headers)
-        find_returns(df, symbol, market, k_type)
+        find_returns(df)
         date = datetime.now().date().strftime("%Y%m%d")
         dir_path = os.path.join(resource_path, "csv", "stock_price")
         remove_under(dir_path)
