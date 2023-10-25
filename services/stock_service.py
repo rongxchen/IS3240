@@ -49,7 +49,7 @@ indexes = [
     # {"symbol": ".DJI", "market": "US"},
     {"symbol": ".IXIC", "name": "NASDAQ", "market": "US", "color": "#c7a9a3"},
     {"symbol": ".SPX", "name": "SP500", "market": "US", "color": "#b3c5ad"},
-    {"symbol": "HSI", "name": "HENG SANG", "market": "HK", "color": "#b29bc4"}
+    {"symbol": "HSI", "name": "HANG SENG", "market": "HK", "color": "#b29bc4"}
 ]
 line_colors = [
     "#708090", # Slate Gray
