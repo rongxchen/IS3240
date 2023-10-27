@@ -1,39 +1,43 @@
-# IS3240
-<h2>1. set up</h2>
-1. clone from GitHub
-<br>
-2. under root of requirements.txt, open terminal and run command "pip install -r requirements.txt"
-<br>
-3. run app.py to see if the web application is available
+## IS3240
 
-<h2>2. project structure</h2>
-1. controllers: APIs
-<br>
-2. models: connection models of database
-<br>
-3. services: bridge between controllers and models, i.e., main logics will be written here
-<br>
-but for some services, models might not be involved, i.e., web scraping
-<br>
-4. static: frontend tools including css, js, images
-<br>
-5. templates: .html files
-<br>
-6. utils: general utilities
-<br>
-7. app.py: main run function
-<br>
-8. sqlite3.db: database
-<br>
-
-<h2>use "pipreqs --force ." to generate new requirements.txt</h2>
+## 1. set up
+#### 1. clone from GitHub
+#### 2. under root of requirements.txt, open terminal and run command "pip install -r requirements.txt"
+#### 3. run app.py to see if the web application is available
+###
 
 
-Data Collection
-1. stock price
-- source: we scrap stock price data from a online dealer called Tiger Trade, we request the api they use with authorization token obtained from their web page.
-- data cleaning: we only get required fileds such as date, open, high, low, close and volume.
+## 2. project structure
+#### 1. controllers: APIs
+#### 2. models: SQL model definitions
+#### 3. resources: scraping data csv like stock prices
+#### 4. services: main logics of program execution for controllers
+#### 5. utils: general utilities like jwt and md5
+#### 7. app.py: bootstrap function
+#### 8. general_config.py: static configuration variables or functions like path or token interceptor
+#### 9. sqlite3.db: database
+##### * reminder: use "pipreqs --force ." to generate new requirements.txt</h2>
+###
 
-2. news data
-- source: we scrap news data from Routers by requesting their api.
-- data cleaning: we get fields like title, url, image, category and date.
+
+## Data Collection
+#### 1. Stock Price & Stock Symbol Searching
+- Data source: Tiger Trade
+- Method: 
+  - Obtain their authorization token from the web page
+  - Request their APIs 
+- Data cleaning: get necessary fields only, such as 
+  - {date, open, high, low, close and volume} for stock price
+  - {symbol, name, market} for stock search
+#### * To reduce API requests, we save the stock price data of a stock according to the K-line and date as .csv under resource folder, and delete out of date files if detected
+###
+
+#### 2. news data
+- Data source: Routers
+- Method: 
+  - Obtain their API by clicking "load more" button
+  - Request their APIs by entering required parameters like offset
+  - Store the news data to db, and then sync the data that did not present in the db when start the server
+- Data Cleaning: get necessary fields only, such as 
+  - {title, url, image_url, category, publish_time}
+###
