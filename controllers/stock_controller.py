@@ -1,3 +1,4 @@
+from traitlets import default
 from services import stock_service
 from general_config import result, token_required
 from flask import Blueprint, make_response, request
@@ -58,6 +59,8 @@ def get_default_indexes_returns(user_id, interval):
         return result(400, "failed")
     return result(200, "success", data)
 
+default_index = [".IXIC", ".SPX", "HSI"]
+
 @stock_api.post("/api/stocks/return")
 @token_required
 def get_single_return(user_id):
@@ -65,7 +68,7 @@ def get_single_return(user_id):
     symbol = str(body["symbol"]).upper()
     interval = str(body["interval"]).upper()
     stocks = stock_service.search(symbol, "ALL")
-    found = stock_service.find_comparison_from_db(user_id, symbol)
+    found = stock_service.find_comparison_from_db(user_id, symbol) or symbol in default_index
     if found:
         return result(400, "already in comparison table")
     for stock in stocks["list"]:
@@ -79,6 +82,8 @@ def get_single_return(user_id):
 def remove_comparison(user_id):
     body = request.json
     symbol = str(body["symbol"]).upper()
+    if symbol in default_index:
+        return result(200, "success")
     removed = stock_service.remove_comparison(user_id, symbol)
     if removed:
         return result(200, "success")
