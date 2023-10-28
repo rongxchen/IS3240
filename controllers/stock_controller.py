@@ -1,4 +1,3 @@
-from traitlets import default
 from services import stock_service
 from general_config import result, token_required
 from flask import Blueprint, make_response, request
