@@ -43,12 +43,13 @@ def find_total(keyword=None):
 
 def get_news_by_page(page, size, keyword=None):
     _from = (page-1) * size
-    news_list = session.query(News).order_by(desc("timestamp")).limit(size).offset(_from).all() \
+    news_list = session.query(News).filter(News.title.like(f'%{str(keyword).strip()}%')).order_by(desc("timestamp")).limit(size).offset(_from).all() \
         if keyword else session.query(News).order_by(desc("timestamp")).limit(size).offset(_from).all()
+    print(news_list)
     return {
         "list": [{
             "title": news.title, "url": news.url, "publish_time": news.publish_time, "img_url": news.img_url,
-            "category": news.category, "source": str(news.source).upper()
+            "category": news.category.replace(" ", "/"), "source": str(news.source).upper()
         } for news in news_list],
         "total": find_total(keyword)
     }

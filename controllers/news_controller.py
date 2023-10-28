@@ -13,6 +13,7 @@ def get_news_by_page(user_id, page, size):
     :return: a list of news articles
     """
     keyword = request.args.get("keyword")
+    print(keyword)
     news_list = news_service.get_news_by_page(page, size) if not keyword and keyword.strip() != "" else news_service.search_news(page, size, keyword)
     if news_list:
         return result(200, "success", news_list)
