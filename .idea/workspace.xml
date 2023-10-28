@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="update db and resource">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/csv/stock_price/.SPX-US-D-20231027.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlite3.db" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite3.db" afterDir="false" />
-    </list>
+    <list default="true" id="44e212e8-78bb-4ef2-a565-f657f2ae7930" name="Changes" comment="update readme.md" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,14 +239,7 @@
       <workItem from="1697960186553" duration="11199000" />
       <workItem from="1697983898193" duration="5881000" />
       <workItem from="1698383491009" duration="4000" />
-      <workItem from="1698385599838" duration="1432000" />
-    </task>
-    <task id="LOCAL-00014" summary="v1">
-      <created>1695654176742</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1695654176742</updated>
+      <workItem from="1698385599838" duration="1673000" />
     </task>
     <task id="LOCAL-00015" summary="v1">
       <created>1695654193998</created>
@@ -589,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698385697040</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="update readme.md">
+      <created>1698387255994</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1698387255994</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +602,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="backend app init" />
     <MESSAGE value="backend stock price init" />
     <MESSAGE value="backend users init" />
     <MESSAGE value="updated requirements.txt" />
@@ -632,7 +626,8 @@
     <MESSAGE value="update favourites" />
     <MESSAGE value="update comparison" />
     <MESSAGE value="update db and resource" />
-    <option name="LAST_COMMIT_MESSAGE" value="update db and resource" />
+    <MESSAGE value="update readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme.md" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/group_project$stock_controller.coverage" NAME="stock_controller Coverage Results" MODIFIED="1696849552060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controllers" />

@@ -65,6 +65,9 @@ def get_single_return(user_id):
     symbol = str(body["symbol"]).upper()
     interval = str(body["interval"]).upper()
     stocks = stock_service.search(symbol, "ALL")
+    found = stock_service.find_comparison_from_db(user_id, symbol)
+    if found:
+        return result(400, "already in comparison table")
     for stock in stocks["list"]:
         if stock["symbol"] == symbol:
             data = stock_service.get_single_return(user_id, stock["symbol"], stock["name"], stock["market"], interval)

@@ -109,3 +109,6 @@ def get_single_return(user_id, symbol, name, market, interval):
         "label": {"symbol": symbol, "name": name, "market": market},
         "data": cumulative_return, "color": line_colors[length]
     }
+
+def find_comparison_from_db(user_id, symbol):
+    return session.query(Comparison).filter_by(user_id=user_id, symbol=symbol).first()
