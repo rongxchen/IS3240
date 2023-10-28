@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from services import news_service
 from general_config import token_required, result
 
@@ -12,7 +12,8 @@ def get_news_by_page(user_id, page, size):
     :param size: size of news per page
     :return: a list of news articles
     """
-    news_list = news_service.get_news_by_page(page, size)
+    keyword = request.args.get("keyword")
+    news_list = news_service.get_news_by_page(page, size) if not keyword and keyword.strip() != "" else news_service.search_news(page, size, keyword)
     if news_list:
         return result(200, "success", news_list)
     return result(400, "failed")
