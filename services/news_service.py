@@ -1,7 +1,8 @@
 from datetime import datetime
 from models.model import News, session
 from sqlalchemy import desc, text
-from services.news_service_helper import from_reuters
+from services.news_service_helper import from_reuters, from_bbg
+
 
 def find_latest(source):
     return session.query(News).filter_by(source=source).order_by(desc("timestamp")).first()
@@ -34,6 +35,9 @@ def sync_news():
         if not written:
             break
         print(f"page {i} finished")
+
+    news_from_routers = from_bbg()
+    written = write_to_db(news_from_routers, "bloomberg", latest)
     print("synced to latest")
 
 def find_total(keyword=None):

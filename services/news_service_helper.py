@@ -45,3 +45,26 @@ def from_reuters(page, size):
     except Exception as e:
         print(e)
     return news_list
+
+def enc_params_bbg(offset):
+    params = f"id=pagination_story_list&page=markets-vp&offset={offset}&variation=pagination&type=story_list"
+    return params
+
+def from_bbg():
+    print("xxxxxx")
+    params = enc_params_bbg(20)
+    url = f"https://www.bloomberg.com/lineup-next/api/paginate?{params}"
+    resp = requests.get(url=url, headers=headers)
+    news_list = []
+    items = resp.json()["pagination_story_list"]["items"]
+    for item in items:
+        title = item["headline"]["text"]
+        url = item["url"]
+        publish_time = item["updatedAt"]
+        img_url = item["lede"]["url"]
+        category = "Market"
+        news_list.append({
+            "title": title.replace("'", "\""), "url": url, "publish_time": publish_time, "img_url": img_url,
+            "category": category
+        })
+    return news_list
