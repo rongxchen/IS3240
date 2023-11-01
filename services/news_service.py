@@ -28,14 +28,14 @@ def remove_duplicates():
 def sync_news():
     remove_duplicates()
     latest = find_latest("routers")
-    print(latest)
-    for i in range(1, 16):
-        news_from_routers = from_reuters(i, 20)
-        written = write_to_db(news_from_routers, "routers", latest)
-        if not written:
-            break
-        print(f"page {i} finished")
-
+    # print(latest)
+    # for i in range(1, 16):
+    #     news_from_routers = from_reuters(i, 20)
+    #     written = write_to_db(news_from_routers, "routers", latest)
+    #     if not written:
+    #         break
+    #     print(f"page {i} finished")
+    latest = find_latest("bloomberg")
     news_from_routers = from_bbg()
     written = write_to_db(news_from_routers, "bloomberg", latest)
     print("synced to latest")
