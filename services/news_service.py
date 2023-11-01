@@ -10,10 +10,10 @@ def find_latest(source):
 def write_to_db(news_list, source, latest=None):
     for news in news_list:
         timestamp = int(datetime.strptime(news["publish_time"], "%Y-%m-%d").timestamp())
-        if latest != None:
-            if timestamp < latest.timestamp or (news["title"] == latest.title and timestamp == latest.timestamp):
-                print("stop syncing")
-                return False
+        # if latest != None:
+        #     if timestamp < latest.timestamp or (news["title"] == latest.title and timestamp == latest.timestamp):
+        #         print("stop syncing")
+        #         return False
         timestamp = int(datetime.strptime(news.get("publish_time"), "%Y-%m-%d").timestamp())
         news_obj = News(news["title"], news["publish_time"], timestamp, source, news.get("url", ""),
                         news.get("category", ""), news.get("img_url"))
@@ -29,13 +29,12 @@ def remove_duplicates():
 def sync_news():
     remove_duplicates()
     latest = find_latest("routers")
-    # print(latest)
-    # for i in range(1, 16):
-    #     news_from_routers = from_reuters(i, 20)
-    #     written = write_to_db(news_from_routers, "routers", latest)
-    #     if not written:
-    #         break
-    #     print(f"page {i} finished")
+    for i in range(1, 16):
+        news_from_routers = from_reuters(i, 20)
+        written = write_to_db(news_from_routers, "routers", latest)
+        if not written:
+            break
+        print(f"page {i} finished")
     latest = find_latest("bloomberg")
     news_from_routers = from_bbg()
     written = write_to_db(news_from_routers, "bloomberg", latest)
