@@ -61,9 +61,10 @@ def from_bbg():
         title = item["headline"]["text"]
         url = item["url"]
         publish_time = item["updatedAt"].split("T")[0]
-        if item["lede"] == None:
-            continue
-        img_url = item["lede"]["url"]
+        if item["lede"] != None:
+            img_url = item["lede"]["url"]
+        else:
+            img_url = None
         category = "Market"
         news_list.append({
             "title": title.replace("'", "\""), "url": url, "publish_time": publish_time, "img_url": img_url,
