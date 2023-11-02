@@ -72,10 +72,10 @@ def from_bbg():
                     if "url" in item["lede"]:
                         img_url = item["lede"]["url"]
                 else:
-                    img_url = None
+                    img_url = ""
                 category = a["category"]
                 news_list.append({
-                    "title": title.replace("'", "\""), "url": url, "publish_time": publish_time, "img_url": img_url,
-                    "category": category
+                    "title": title.replace("'", "\""), "url": url, "publish_time": publish_time, 
+                    "img_url": img_url, "category": category
                 })
     return news_list
