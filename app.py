@@ -7,6 +7,7 @@ from controllers.news_controller import news_api
 from controllers.favourite_controller import favourite_api
 from services.news_service import sync_news
 from general_config import resource_path, remove_under
+from waitress import serve
 
 app = Flask(__name__, static_folder="static")
 app.register_blueprint(user_api)
@@ -23,4 +24,4 @@ if __name__ == '__main__':
     remove_under(stock_csv_path)
     # sync news data
     sync_news()
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    serve(app)
