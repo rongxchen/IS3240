@@ -48,7 +48,6 @@ def get_news_by_page(page, size, keyword=None):
     news_list = session.query(News).filter(News.title.like(f'%{str(keyword).strip()}%')) \
             .order_by(desc("timestamp"), asc("title")).limit(size).offset(_from).all() \
         if keyword else session.query(News).order_by(desc("timestamp"), asc("title")).limit(size).offset(_from).all()
-    print(news_list)
     return {
         "list": [{
             "title": news.title, "url": news.url, "publish_time": news.publish_time, "img_url": news.img_url,
@@ -58,5 +57,4 @@ def get_news_by_page(page, size, keyword=None):
     }
 
 def search_news(page, size, keyword):
-    print("from search")
     return get_news_by_page(page, size, keyword)

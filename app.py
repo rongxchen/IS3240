@@ -24,4 +24,5 @@ if __name__ == '__main__':
     remove_under(stock_csv_path)
     # sync news data
     sync_news()
-    serve(app, host="0.0.0.0")
+    serve(app, host="0.0.0.0", port=8000)
+    # app.run(host="0.0.0.0", port=8000)
