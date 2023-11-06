@@ -33,9 +33,9 @@
 ###
 
 #### 2. news data
-- Data source: Routers
+- Data source: Routers, Bloomberg
 - Method: 
-  - Obtain their API by clicking "load more" button
+  - Obtain their APIs by clicking "load more" button
   - Request their APIs by entering required parameters like offset
   - Store the news data to db, and then sync the data that did not present in the db when start the server
 - Data Cleaning: get necessary fields only, such as 
