@@ -5,7 +5,7 @@ from utils import jwt_util
 from datetime import datetime
 
 db_path = "sqlite:///" + os.path.join(os.path.dirname(__file__), "sqlite3.db")
-tiger_token_path = os.path.join(os.path.dirname(__file__), "TigerTrade_access_token.txt")
+tiger_token_path = os.path.join(os.path.dirname(__file__), "services", "TigerTrade_access_token.txt")
 resource_path = os.path.join(os.path.dirname(__file__), "resources")
 
 def result(code: int, message: str, data: any = None):
@@ -20,10 +20,10 @@ def token_required(f):
     def decorator(*args, **kwargs):
         token = request.headers["Authorization"] if "Authorization" in request.headers else None
         if not token:
-            return result(403, "unauthorized")
+            return result(401, "unauthorized")
         verified, resp = jwt_util.verify_token(token)
         if not verified:
-            return result(403, f"unauthorized: {resp}")
+            return result(401, f"unauthorized: {resp}")
         return f(resp, *args, **kwargs)
     return decorator
 
