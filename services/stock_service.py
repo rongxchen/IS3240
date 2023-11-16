@@ -1,7 +1,11 @@
+import os
+import yahooquery as yq
+import pandas as pd
 import numpy as np
 from models.model import session, Comparison
 from services.stock_service_tiger_trade import search_stock, get_stock_price_list
 from services.stock_service_helper import find_raw_csv_from_resource, find_from_resource
+from general_config import resource_path
 
 def search(symbol, market = "ALL"):
     symbol = str(symbol).upper()
@@ -33,6 +37,27 @@ def get_csv_binary(symbol, market, k_type):
     except Exception as e:
         print(f"exception: {e}")
     return None, None
+
+def find_financial_statements(symbol: str, market: str):
+    path = os.path.join(resource_path, "excel", "financial_statements", f"{symbol}-{market}.xlsx")
+    if not os.path.exists(path):
+        if market == "HK":
+            _symbol = symbol.lstrip("0")
+        # initialize ticker
+        ticker = yq.Ticker(symbol if market == "US" else f"{_symbol}.HK")
+        # get three financials
+        income_statement = ticker.income_statement().transpose()
+        balance_sheet = ticker.balance_sheet().transpose()
+        cash_flow_statement = ticker.cash_flow().transpose()
+        # save it to file
+        with pd.ExcelWriter(path) as writer:
+            income_statement.to_excel(writer, sheet_name="income statement")
+            balance_sheet.to_excel(writer, sheet_name="balance sheet")
+            cash_flow_statement.to_excel(writer, sheet_name="cashflow statement")
+    # return binary data and filename
+    with open(path, "rb") as file:
+        binary = file.read()
+    return binary, path.split("\\")[-1]
 
 def get_return(symbol, market, interval):
     get_stock_price(symbol, market, "D")

@@ -50,7 +50,7 @@ def enc_params_bbg(offset,id,page):
     params = f"id={id}&page={page}&offset={offset}&variation=pagination&type=story_list"
     return params
 
-def from_bbg():
+def from_bbg(latest):
     news_list = []
     arr = [
         {"category":"Markets","id":"pagination_story_list","page":"markets-vp"},
@@ -66,6 +66,8 @@ def from_bbg():
             items = resp.json()["pagination_story_list"]["items"]
             for item in items:
                 title = item["headline"]["text"]
+                if latest and latest.title == title:
+                    return news_list
                 url = item["url"]
                 publish_time = item["updatedAt"].split("T")[0]
                 if item["lede"] != None:

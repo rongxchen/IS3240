@@ -11,7 +11,6 @@ def write_to_db(news_list, source, latest=None):
     for news in news_list:
         timestamp = int(datetime.strptime(news["publish_time"], "%Y-%m-%d").timestamp())
         if latest and timestamp < latest.timestamp or (news["title"] == latest.title and timestamp == latest.timestamp):
-                print("stop syncing")
                 return False
         news_obj = News(news["title"], news["publish_time"], timestamp, source, news.get("url", ""),
                         news.get("category", ""), news.get("img_url", ""))
@@ -25,18 +24,16 @@ def remove_duplicates():
     session.commit()
 
 def sync_news():
-    remove_duplicates()
     latest = find_latest("routers")
     for i in range(1, 16):
         news_list = from_reuters(i, 20)
         written = write_to_db(news_list, "routers", latest)
         if not written:
             break
-        print(f"page {i} finished")
     latest = find_latest("bloomberg")
-    news_list = from_bbg()
+    news_list = from_bbg(latest)
     written = write_to_db(news_list, "bloomberg", latest)
-    print("synced to latest")
+    remove_duplicates()
 
 def find_total(keyword=None):
     filter_by = f" where title like '%{keyword}%'"

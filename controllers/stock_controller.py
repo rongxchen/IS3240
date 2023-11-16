@@ -49,6 +49,20 @@ def download_price_data(user_id):
         return response
     return result(400, "error")
 
+@stock_api.post("/api/stocks/financials/download")
+@token_required
+def download_financials(user_id):
+    body = request.json
+    symbol = str(body["symbol"]).upper()
+    market = str(body["market"]).upper()
+    binary, filename = stock_service.find_financial_statements(symbol, market)
+    if binary and filename:
+        response = make_response(binary)
+        response.headers['Content-Type'] = 'application/octet-stream'
+        response.headers['Content-Disposition'] = f'attachment; filename="{filename}"'
+        return response
+    return result(400, "error")
+
 @stock_api.get("/api/stocks/return/index/<string:interval>")
 @token_required
 def get_default_indexes_returns(user_id, interval):
