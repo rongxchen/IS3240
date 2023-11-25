@@ -8,10 +8,11 @@ def find_latest(source):
     return session.query(News).filter_by(source=source).order_by(desc("timestamp")).first()
 
 def write_to_db(news_list, source, latest=None):
+    print(latest)
     for news in news_list:
         timestamp = int(datetime.strptime(news["publish_time"], "%Y-%m-%d").timestamp())
-        if latest and timestamp < latest.timestamp or (news["title"] == latest.title and timestamp == latest.timestamp):
-                return False
+        if latest and (timestamp < latest.timestamp or (news["title"] == latest.title and timestamp == latest.timestamp)):
+            return False
         news_obj = News(news["title"], news["publish_time"], timestamp, source, news.get("url", ""),
                         news.get("category", ""), news.get("img_url", ""))
         session.add(news_obj)
@@ -24,10 +25,10 @@ def remove_duplicates():
     session.commit()
 
 def sync_news():
-    latest = find_latest("routers")
+    latest = find_latest("reuters")
     for i in range(1, 16):
         news_list = from_reuters(i, 20)
-        written = write_to_db(news_list, "routers", latest)
+        written = write_to_db(news_list, "reuters", latest)
         if not written:
             break
     latest = find_latest("bloomberg")
