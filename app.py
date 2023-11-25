@@ -24,6 +24,6 @@ if __name__ == '__main__':
     stock_csv_path = os.path.join(resource_path, "csv", "stock_price")
     remove_under(stock_csv_path)
     # sync news data
-    sync_news()
+    sync_news() 
     print("sync to latest, app starting...")
     serve(app, host="0.0.0.0", port=8000)
